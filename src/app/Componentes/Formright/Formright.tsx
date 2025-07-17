@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 
 export default function FormRight() {
   const [formData, setFormData] = useState({
@@ -13,14 +13,14 @@ export default function FormRight() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
@@ -44,10 +44,10 @@ export default function FormRight() {
           message: "",
         });
       } else {
-        const err = await res.json();
-        setError(err.message || "Something went wrong.");
+        const errData = await res.json();
+        setError(errData.message || "Something went wrong.");
       }
-    } catch (err) {
+    } catch {
       setError("Network error, please try again.");
     }
   };
@@ -77,6 +77,7 @@ export default function FormRight() {
           type="tel"
           name="phone"
           placeholder="Phone Number"
+          required
           value={formData.phone}
           onChange={handleChange}
           className="w-full border px-3 py-2 rounded"
