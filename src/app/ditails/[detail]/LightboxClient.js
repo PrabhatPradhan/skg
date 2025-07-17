@@ -40,7 +40,7 @@ export default function LightboxClient({ galleryImages }) {
               className="rounded shadow"
             />
             {/* Hover Plus Icon */}
-            <div className="absolute inset-0   bg-black/50 opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center rounded">
+            <div className="absolute inset-0      opacity-0 group-hover:opacity-100 transition duration-200 flex items-center justify-center rounded">
               <span className="text-white text-5xl font-bold">+</span>
             </div>
           </div>
@@ -55,13 +55,12 @@ export default function LightboxClient({ galleryImages }) {
         >
           {/* Enlarged Image */}
           <Image
-  src={`${base}${galleryImages[selectedIndex].url}`}
-  alt="Full View"
-  width={1200} // Approx width
-  height={800} // Approx height
-  className="w-[90vw] h-auto max-h-[90vh] object-contain rounded shadow-lg"
-/>
-
+            src={`${base}${galleryImages[selectedIndex].url}`}
+            alt="Full View"
+            width={1200} // Approx width
+            height={800} // Approx height
+            className="w-[90vw] h-auto max-h-[90vh] object-contain rounded shadow-lg"
+          />
 
           {/* Close Button */}
           <button
