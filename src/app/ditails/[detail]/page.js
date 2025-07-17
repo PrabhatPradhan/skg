@@ -1,5 +1,5 @@
 // app/ditails/[detail]/page.js
-import Image from "next/image";
+ 
 import Navbar from "../../Componentes/Navbar/Navbar";
 import Fromright from "../../Componentes/Formright/Formright";
 import LightboxClient from "./LightboxClient"; // ✅ New client component

@@ -54,11 +54,14 @@ export default function LightboxClient({ galleryImages }) {
           onClick={closeLightbox}
         >
           {/* Enlarged Image */}
-          <img
-            src={`${base}${galleryImages[selectedIndex].url}`}
-            alt="Full View"
-            className="w-[90vw] h-auto max-h-[90vh] object-contain rounded shadow-lg"
-          />
+          <Image
+  src={`${base}${galleryImages[selectedIndex].url}`}
+  alt="Full View"
+  width={1200} // Approx width
+  height={800} // Approx height
+  className="w-[90vw] h-auto max-h-[90vh] object-contain rounded shadow-lg"
+/>
+
 
           {/* Close Button */}
           <button
